@@ -1,0 +1,12 @@
+{
+  "name": "iBudget",
+  "short_name": "iBudget",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#111214",
+  "theme_color": "#111214",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }],
+  "shortcuts": [
+    { "name": "Quick add purchase", "short_name": "Quick add", "url": "./index.html?quickadd=1", "icons": [{ "src": "icon.svg", "sizes": "any" }] }
+  ]
+}

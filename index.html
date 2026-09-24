@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>iBudget</title>
+  <meta name="description" content="iBudget — a personal budgeting app for salaried and hourly earners.">
+  <meta name="theme-color" content="#111214">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a class="logo" href="#/dashboard" aria-label="iBudget home">
+        <svg class="ib-mark" viewBox="0 0 48 48" width="36" height="36" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoGrad" gradientUnits="userSpaceOnUse" x1="6" y1="8" x2="42" y2="40">
+              <stop offset="0" stop-color="#b8ff3c"/>
+              <stop offset="1" stop-color="#1fe29a"/>
+            </linearGradient>
+          </defs>
+          <circle cx="12" cy="11.5" r="3.2" fill="url(#logoGrad)"/>
+          <path d="M12 19v19" stroke="url(#logoGrad)" stroke-width="5" stroke-linecap="round" fill="none"/>
+          <path d="M22 10h8.5a6.5 6.5 0 0 1 0 13H22m0 0h9.5a7.5 7.5 0 0 1 0 15H22zV10" stroke="url(#logoGrad)" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+        </svg>
+      </a>
+      <nav class="nav" id="nav" aria-label="Main"></nav>
+      <div class="side-foot">
+        <div class="side-left" id="sideLeft"></div>
+        <button class="btn-purple" data-action="quick-add">Quick<br>add</button>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <label class="search">
+          <span class="search-icon" id="searchIcon"></span>
+          <input id="search" type="search" placeholder="Search transactions" autocomplete="off" aria-label="Search transactions">
+        </label>
+        <div class="top-right">
+          <button class="btn-outline-green" data-action="export">Export as CSV</button>
+          <div class="top-divider"></div>
+          <button class="user" data-action="go" data-route="settings" aria-label="Settings">
+            <span class="avatar" id="userAvatar"></span>
+            <span class="user-name" id="userName"></span>
+          </button>
+        </div>
+      </header>
+      <main id="view" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <button class="fab" data-action="quick-add" aria-label="Quick add transaction">+</button>
+  <div id="modalRoot"></div>
+  <div id="tooltip" class="tooltip" role="tooltip"></div>
+  <div id="lockRoot"></div>
+  <input type="file" id="importFile" accept="application/json,.json" hidden>
+
+  <script src="js/utils.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/finance.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
